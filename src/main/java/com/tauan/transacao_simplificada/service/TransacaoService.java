@@ -15,7 +15,6 @@ import org.springframework.web.client.HttpClientErrorException;
 import java.math.BigDecimal;
 
 @Service
-@EnableFeignClients
 public class TransacaoService {
 
     private final UsuarioService usuarioServiceervice;
@@ -44,7 +43,7 @@ public class TransacaoService {
        pagador.getCarteira().setSaldo(pagador.getCarteira().getSaldo().subtract(transacaoDTO.value()));
        atualizarSaldoCarteira(pagador.getCarteira());
 
-        recebedor.getCarteira().setSaldo(pagador.getCarteira().getSaldo().add(transacaoDTO.value()));
+        recebedor.getCarteira().setSaldo(recebedor.getCarteira().getSaldo().add(transacaoDTO.value()));
         atualizarSaldoCarteira(recebedor.getCarteira());
 
         Transacoes transacoes = new Transacoes(null, transacaoDTO.value(), pagador, recebedor, null);
@@ -54,7 +53,7 @@ public class TransacaoService {
     }
     private void validaPagadorLogista(Usuario usuario){
         try{
-            if(usuario.getTipoUsuario().equals(TipoUsuario.LOGISTA)){
+            if(usuario.getTipoUsuario().equals(TipoUsuario.LOJISTA)){
                 throw new IllegalArgumentException("Transação não autorizada para esse tipo de usuário.");
             }
         }catch (Exception e){
