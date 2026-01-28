@@ -1,7 +1,7 @@
 package com.tauan.transacao_simplificada.infrastructure.repository;
 
-import com.tauan.transacao_simplificada.infrastructure.entity.Usuario;
+import com.tauan.transacao_simplificada.infrastructure.entity.Carteira;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+public interface CarteiraRepository extends JpaRepository<Carteira, Long> {
 }

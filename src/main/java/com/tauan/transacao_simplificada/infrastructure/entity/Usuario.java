@@ -77,4 +77,12 @@ public class Usuario {
     public void setCarteira(Carteira carteira) {
         this.carteira = carteira;
     }
+
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
 }

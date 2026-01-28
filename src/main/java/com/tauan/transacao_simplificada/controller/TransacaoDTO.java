@@ -1,2 +1,6 @@
-package com.tauan.transacao_simplificada.controller;public record TransacaoDTO() {
+package com.tauan.transacao_simplificada.controller;
+
+import java.math.BigDecimal;
+
+public record TransacaoDTO(BigDecimal value, Long payer, Long payee) {
 }
