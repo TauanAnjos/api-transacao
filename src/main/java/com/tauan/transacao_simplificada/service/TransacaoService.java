@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 
 @Service
 @EnableFeignClients
-public class TransferenciasService {
+public class TransacaoService {
 
     private final UsuarioService usuarioServiceervice;
     private final AutorizacaoService autorizacaoService;
@@ -24,7 +24,7 @@ public class TransferenciasService {
     private final TransacoesRepository transacoesRepository;
     private final NotificacaoService notificacaoService;
 
-    public TransferenciasService(UsuarioService usuarioServiceervice, AutorizacaoService autorizacaoService, CarteiraService carteiraService, TransacoesRepository transacoesRepository, NotificacaoService notificacaoService) {
+    public TransacaoService(UsuarioService usuarioServiceervice, AutorizacaoService autorizacaoService, CarteiraService carteiraService, TransacoesRepository transacoesRepository, NotificacaoService notificacaoService) {
         this.usuarioServiceervice = usuarioServiceervice;
         this.autorizacaoService = autorizacaoService;
         this.carteiraService = carteiraService;
