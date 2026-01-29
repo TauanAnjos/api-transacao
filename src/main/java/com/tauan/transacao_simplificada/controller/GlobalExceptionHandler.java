@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(IllegalAccessException.class)
-    public ResponseEntity<String> handleIllegalAccessException(IllegalAccessException e){
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalAccessException(IllegalArgumentException e){
         return new ResponseEntity<>("Erro: "+ e.getMessage(), HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(BadRequestException.class)
